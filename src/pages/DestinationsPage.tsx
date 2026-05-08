@@ -23,6 +23,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { DESTINATIONS, CONTACT_INFO } from "../constants";
 
 import destImageCherrapunji from "../assets/images/regenerated_image_1777896247600.png";
+import destImageShillong from "../assets/images/regenerated_image_1777780523170.png";
+import destImageMawlynnong from "../assets/images/regenerated_image_1777780711853.png";
 
 export default function DestinationsPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,6 +35,13 @@ export default function DestinationsPage() {
   const filteredDestinations = activeState === "All" 
     ? DESTINATIONS 
     : DESTINATIONS.filter(d => d.state === activeState);
+
+  const getDestImage = (name: string, defaultImage: string) => {
+    if (name === "Cherrapunji") return destImageCherrapunji;
+    if (name === "Shillong") return destImageShillong;
+    if (name === "Mawlynnong") return destImageMawlynnong;
+    return defaultImage;
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -145,7 +154,7 @@ export default function DestinationsPage() {
               <Card className="group overflow-hidden border-none shadow-lg hover:shadow-xl transition-all rounded-3xl h-full flex flex-col">
                 <div className="relative h-64 overflow-hidden">
                   <img 
-                    src={dest.name === "Cherrapunji" ? destImageCherrapunji : dest.image} 
+                    src={getDestImage(dest.name, dest.image)} 
                     alt={dest.name} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     referrerPolicy="no-referrer"
@@ -221,6 +230,12 @@ export default function DestinationsPage() {
               <Compass className="text-white" size={18} />
             </div>
             <span className="text-xl font-bold tracking-tighter">NYRAV</span>
+          </div>
+          <div className="flex justify-center gap-6 mb-6 text-sm text-zinc-400">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <Link to="/cabs" className="hover:text-white transition-colors">Cabs</Link>
+            <Link to="/query" className="hover:text-white transition-colors">Enquiry</Link>
+            <a href={`https://${CONTACT_INFO.website}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline decoration-emerald-500/50 underline-offset-4">{CONTACT_INFO.website}</a>
           </div>
           <p className="text-zinc-500 text-sm">© 2026 NYRAV TOURS AND TRAVELS. All rights reserved.</p>
         </div>

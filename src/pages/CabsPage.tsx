@@ -334,6 +334,7 @@ export default function CabsPage() {
             <Link to="/cabs" className="hover:text-emerald-600 transition-colors">Cabs</Link>
             <Link to="/destinations" className="hover:text-emerald-600 transition-colors">Destinations</Link>
             <Link to="/query" className="hover:text-emerald-600 transition-colors">Enquiry</Link>
+            <a href={`https://${CONTACT_INFO.website}`} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">Official Website</a>
           </div>
 
           <p className="text-zinc-400 text-sm">

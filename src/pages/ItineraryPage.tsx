@@ -12,6 +12,7 @@ import {
   X,
   ChevronRight,
   ArrowRight,
+  Mail,
   Instagram,
   Facebook,
   Twitter,
@@ -209,6 +210,18 @@ export default function ItineraryPage() {
                         <p className="text-lg text-zinc-600 mb-8 leading-relaxed italic border-l-4 border-emerald-500 pl-6">
                           "{day.description}"
                         </p>
+                        
+                        {day.image && (
+                          <div className="mb-8 rounded-2xl overflow-hidden aspect-video">
+                            <img 
+                              src={day.image} 
+                              alt={day.title} 
+                              className="w-full h-full object-cover"
+                              referrerPolicy="no-referrer"
+                            />
+                          </div>
+                        )}
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           {day.activities.map((act, i) => (
                             <div key={i} className="flex items-start gap-3 bg-zinc-50 p-4 rounded-2xl">
@@ -352,8 +365,14 @@ export default function ItineraryPage() {
                   <span>{CONTACT_INFO.phones.join(" / ")}</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Globe className="w-5 h-5 text-emerald-500 shrink-0" />
+                  <Mail className="w-5 h-5 text-emerald-500 shrink-0" />
                   <span>{CONTACT_INFO.email}</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Globe className="w-5 h-5 text-emerald-500 shrink-0" />
+                  <a href={`https://${CONTACT_INFO.website}`} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500 transition-colors">
+                    {CONTACT_INFO.website}
+                  </a>
                 </li>
               </ul>
             </div>

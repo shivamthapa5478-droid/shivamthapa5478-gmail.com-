@@ -43,7 +43,7 @@ export const DESTINATIONS = [
   {
     name: "Cherrapunji",
     state: "Meghalaya",
-    image: "https://images.unsplash.com/photo-1547071724-4f014e054452?auto=format&fit=crop&q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1510411802187-2ef66ce8d21c?auto=format&fit=crop&q=80&w=2070",
     description: "One of the wettest places on earth, famous for its living root bridges and breathtaking waterfalls.",
     locations: ["Seven Sisters Falls", "Double Decker Root Bridge", "Mawsmai Cave", "Nohkalikai Falls"]
   },
@@ -87,7 +87,7 @@ export const DESTINATIONS = [
   {
     name: "Tawang",
     state: "Arunachal Pradesh",
-    image: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?auto=format&fit=crop&q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1574236170839-399dc9767490?auto=format&fit=crop&q=80&w=2070",
     description: "A high-altitude town known for its massive monastery and stunning Himalayan landscapes.",
     locations: ["Tawang Monastery", "Sela Pass", "Bum La Pass", "Madhuri Lake", "War Memorial"]
   },
@@ -101,9 +101,16 @@ export const DESTINATIONS = [
   {
     name: "Bomdila",
     state: "Arunachal Pradesh",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&q=80&w=2070",
     description: "A picturesque town offering panoramic views of the snow-capped Himalayan peaks.",
     locations: ["Bomdila Monastery", "Apple Orchards", "Eaglenest Wildlife Sanctuary", "View Points"]
+  },
+  {
+    name: "Dawki",
+    state: "Meghalaya",
+    image: "https://images.unsplash.com/photo-1549221540-cb64c8dbe3fb?auto=format&fit=crop&q=80&w=2070",
+    description: "Famous for the crystal clear waters of the Umngot River where boats seem to float in mid-air.",
+    locations: ["Umngot River", "Jaflong Zero Point", "Dawki Bridge", "Boating", "Snorkeling"]
   },
   // Bhutan
   {
@@ -306,16 +313,20 @@ export const GALLERY_IMAGES = [
     title: "Seven Sisters Falls - A Breathtaking Wonder of Meghalaya"
   },
   {
-    url: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&q=80&w=2070",
-    title: "Nohsngithiang Falls (Seven Sisters Falls)"
+    url: "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&q=80&w=2070",
+    title: "Misty Valleys of Northeast India"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2070",
+    title: "Cloudy Peaks of Shillong"
   },
   {
     url: "https://images.unsplash.com/photo-1549422501-7925e0037a34?auto=format&fit=crop&q=80&w=2070",
     title: "Double Decker Living Root Bridge, Cherrapunji"
   },
   {
-    url: "https://images.unsplash.com/photo-1544239607-3507d472287c?auto=format&fit=crop&q=80&w=2070",
-    title: "Eco Park Viewpoint, Cherrapunji"
+    url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=2070",
+    title: "Sunset over the Brahmaputra"
   },
   {
     url: "https://images.unsplash.com/photo-1547071724-4f014e054452?auto=format&fit=crop&q=80&w=2070",
@@ -330,24 +341,16 @@ export const GALLERY_IMAGES = [
     title: "Divine Maa Kamakhya Temple"
   },
   {
-    url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=2070",
-    title: "Wei Sawdong Falls, Cherrapunji"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1432405972618-c60002091c8c?auto=format&fit=crop&q=80&w=2070",
-    title: "Lush Greenery of Cherrapunji"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1518182170546-07661607acc5?auto=format&fit=crop&q=80&w=2070",
-    title: "Cherrapunji Forest Trails"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1624440026214-e0e64c8dcf93?auto=format&fit=crop&q=80&w=2070",
-    title: "Maa Kamakhya Temple, Guwahati"
+    url: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?auto=format&fit=crop&q=80&w=2070",
+    title: "Krem Chympe Falls"
   },
   {
     url: "https://images.unsplash.com/photo-1547926158-7e447998632e?auto=format&fit=crop&q=80&w=2070",
     title: "One-Horned Rhino, Kaziranga"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1518182170546-07661607acc5?auto=format&fit=crop&q=80&w=2070",
+    title: "Cherrapunji Forest Trails"
   },
   {
     url: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&q=80&w=2070",
@@ -374,16 +377,16 @@ export const GALLERY_IMAGES = [
     title: "Tour Memories"
   },
   {
-    url: "https://picsum.photos/seed/tour-memories/800/600",
+    url: "https://images.unsplash.com/photo-1549488344-c6e944747040?auto=format&fit=crop&q=80&w=2070",
     title: "Tour Memories with NYRAV"
   },
   {
-    url: "https://picsum.photos/seed/elephant-falls/800/600",
-    title: "Elephant Falls"
+    url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2070",
+    title: "Elephant Falls, Shillong"
   },
   {
-    url: "https://picsum.photos/seed/don-bosco/800/600",
-    title: "Don Bosco Museum"
+    url: "https://images.unsplash.com/photo-1518182170546-07661607acc5?auto=format&fit=crop&q=80&w=2070",
+    title: "Don Bosco Museum, Shillong"
   },
   {
     url: "https://images.unsplash.com/photo-1590483736629-3937a0efd04e?auto=format&fit=crop&q=80&w=2070",
@@ -394,12 +397,28 @@ export const GALLERY_IMAGES = [
     title: "Tour Memories in Northeast"
   },
   {
-    url: "https://picsum.photos/seed/shillong-peak/800/600",
-    title: "Shillong Peak"
+    url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2070",
+    title: "Shillong Peak View"
   },
   {
-    url: "https://picsum.photos/seed/air-force-museum/800/600",
-    title: "Air Force Museum"
+    url: "https://images.unsplash.com/photo-1544239607-3507d472287c?auto=format&fit=crop&q=80&w=2070",
+    title: "Eco Park Viewpoint, Cherrapunji"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1432405972618-c60002091c8c?auto=format&fit=crop&q=80&w=2070",
+    title: "Lush Greenery of Meghalaya"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1549422501-7925e0037a34?auto=format&fit=crop&q=80&w=2070",
+    title: "Double Decker Root Bridge"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&q=80&w=2070",
+    title: "Misty Mountains of Shillong"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1590483736629-3937a0efd04e?auto=format&fit=crop&q=80&w=2070",
+    title: "Kaziranga Elephant Safari"
   }
 ];
 
@@ -432,6 +451,7 @@ export const REVIEWS = [
 export const CONTACT_INFO = {
   phones: ["9383168900", "7004483286", "7665636162"],
   email: "nyravtoursandtravels@gmail.com",
+  website: "nyravtoursandtravels.in",
   address: "P.B Road, Suhagpur, Rehabari, Guwahati, Assam Pin Code: 781008",
   whatsapp: "https://wa.me/919383168900",
   googleMaps: "https://www.google.com/maps/place/NYRAV+TOURS+AND+TRAVELS/@26.175,91.7447,17z",
@@ -446,7 +466,7 @@ export const CAB_SERVICES = [
     capacity: "3+1 / 4+1 Seater",
     price: "₹2,500",
     description: "Compact and budget-friendly. Ideal for city transfers and short mountain trips.",
-    image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&q=80&w=2070",
     features: ["Non-AC Option", "Budget Friendly", "Professional Driver", "Clean & Sanitized"]
   },
   {
@@ -455,7 +475,7 @@ export const CAB_SERVICES = [
     capacity: "4+1 Seater",
     price: "₹3,400",
     description: "Perfect for small families or business trips. Comfortable and economical.",
-    image: "https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1549444030-90600494488b?auto=format&fit=crop&q=80&w=2070",
     features: ["Air Conditioned", "Professional Driver", "Clean Interiors", "Ample Boot Space"]
   },
   {
@@ -478,6 +498,8 @@ export const CAB_SERVICES = [
   }
 ];
 
+export const TEAM_PHOTO = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2071";
+
 export const ITINERARIES = [
   {
     id: "meghalaya-5n6d",
@@ -491,37 +513,43 @@ export const ITINERARIES = [
         day: 1,
         title: "Arrival & Local Sightseeing",
         description: "Pickup from Guwahati Airport. Visit Maa Kamakhya Temple, Umananda Temple, and Balaji Temple. Brief stop for refreshment at AIMS.",
-        activities: ["Airport Pickup", "Kamakhya Temple Darshan", "Umananda Island", "Balaji Temple"]
+        activities: ["Airport Pickup", "Kamakhya Temple Darshan", "Umananda Island", "Balaji Temple"],
+        image: "https://images.unsplash.com/photo-1624440026214-e0e64c8dcf93?auto=format&fit=crop&q=80&w=2070"
       },
       {
         day: 2,
         title: "Guwahati to Shillong",
         description: "Morning breakfast and drive towards the 'Scotland of the East'. Exploration of lakes and canyons on the way.",
-        activities: ["Umiam Lake (Barapani)", "Laitlum Canyons", "Shillong Peak", "Elephant Falls", "Don Bosco Museum", "Cathedral of Mary Help of Christians"]
+        activities: ["Umiam Lake (Barapani)", "Laitlum Canyons", "Shillong Peak", "Elephant Falls", "Don Bosco Museum", "Cathedral of Mary Help of Christians"],
+        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2070"
       },
       {
         day: 3,
         title: "Cherrapunjee (Sohra) Exploration",
         description: "Full day tour of the wettest place on earth, visiting majestic waterfalls and ancient caves.",
-        activities: ["Mawkdok Dympep Valley View Point", "Garden of Caves", "Riskai Park", "Thangkharang Park", "Arwah Cave", "Eco Park", "Seven Sisters Falls", "Mawsmai Cave", "Nohkalikai Falls (Optional)"]
+        activities: ["Mawkdok Dympep Valley View Point", "Garden of Caves", "Riskai Park", "Thangkharang Park", "Arwah Cave", "Eco Park", "Seven Sisters Falls", "Mawsmai Cave", "Nohkalikai Falls (Optional)"],
+        image: "https://images.unsplash.com/photo-1510411802187-2ef66ce8d21c?auto=format&fit=crop&q=80&w=2070"
       },
       {
         day: 4,
         title: "Double Decker Bridge Adventure",
         description: "Dedicated day for the famous trek to the Living Root Bridge. High endurance required for 3500 steps.",
-        activities: ["Double Decker Living Root Bridge Trek", "3500 Steps Challenge", "Natural Blue Water Pools"]
+        activities: ["Double Decker Living Root Bridge Trek", "3500 Steps Challenge", "Natural Blue Water Pools"],
+        image: "https://images.unsplash.com/photo-1549422501-7925e0037a34?auto=format&fit=crop&q=80&w=2070"
       },
       {
         day: 5,
         title: "Mawlynnong (Cleanest Village)",
         description: "Visit the cleanest village in Asia and experience sustainable living. Take in the panoramic views of the Bangladesh plains.",
-        activities: ["Mawlynnong Village Exploration", "Riwai Living Root Bridge", "Balancing Rock", "Sky View Point", "Tree House Experience"]
+        activities: ["Mawlynnong Village Exploration", "Riwai Living Root Bridge", "Balancing Rock", "Sky View Point", "Tree House Experience"],
+        image: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&q=80&w=2070"
       },
       {
         day: 6,
         title: "Departure",
         description: "Early morning drop to Guwahati Airport for your flight back home.",
-        activities: ["2 AM Early Morning Pickup", "Guwahati Airport Drop"]
+        activities: ["2 AM Early Morning Pickup", "Guwahati Airport Drop"],
+        image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=2070"
       }
     ],
     inclusions: ["Toll Tax Included", "Professional Driver", "Clean & Sanitized Vehicle"],

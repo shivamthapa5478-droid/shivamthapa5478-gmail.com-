@@ -54,7 +54,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { SERVICES, DESTINATIONS, PACKAGES, GALLERY_IMAGES, VIDEOS, REVIEWS, CONTACT_INFO } from "../constants";
+import { SERVICES, DESTINATIONS, PACKAGES, GALLERY_IMAGES, VIDEOS, REVIEWS, CONTACT_INFO, TEAM_PHOTO } from "../constants";
 import promoImage from "../assets/images/regenerated_image_1777778625824.png";
 import packageImage1 from "../assets/images/regenerated_image_1777780523170.png";
 import packageImage12 from "../assets/images/regenerated_image_1777794915339.jpg";
@@ -592,6 +592,24 @@ export default function HomePage() {
               </div>
             </motion.div>
           ))}
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative group overflow-hidden rounded-3xl break-inside-avoid bg-emerald-600 p-8 flex flex-col items-center justify-center text-center gap-4 aspect-square"
+          >
+            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center text-white">
+              <Instagram size={32} />
+            </div>
+            <h3 className="text-xl font-bold text-white">Share Your Trip</h3>
+            <p className="text-emerald-100 text-sm">Upload your favorite tour memories and get featured on our website!</p>
+            <Link to="/query">
+              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-emerald-600 rounded-full">
+                Upload Photo
+              </Button>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
@@ -601,8 +619,8 @@ export default function HomePage() {
           <div className="relative">
             <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?auto=format&fit=crop&q=80&w=2069" 
-                alt="Waterfall Tour" 
+                src={TEAM_PHOTO} 
+                alt="NYRAV Team" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -862,6 +880,22 @@ export default function HomePage() {
               </div>
               <div className="flex items-start gap-6">
                 <div className="w-12 h-12 bg-emerald-600 rounded-2xl flex items-center justify-center text-white shrink-0">
+                  <Globe size={24} />
+                </div>
+                <div>
+                  <div className="text-zinc-400 text-sm mb-1">Official Website</div>
+                  <a 
+                    href={`https://${CONTACT_INFO.website}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white text-xl font-medium hover:text-emerald-400 transition-colors"
+                  >
+                    {CONTACT_INFO.website}
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-6">
+                <div className="w-12 h-12 bg-emerald-600 rounded-2xl flex items-center justify-center text-white shrink-0">
                   <MapPin size={24} />
                 </div>
                 <div>
@@ -1019,6 +1053,12 @@ export default function HomePage() {
                 <li className="flex items-center gap-3">
                   <Mail size={16} className="text-emerald-500 shrink-0" />
                   <span>{CONTACT_INFO.email}</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Globe size={16} className="text-emerald-500 shrink-0" />
+                  <a href={`https://${CONTACT_INFO.website}`} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">
+                    {CONTACT_INFO.website}
+                  </a>
                 </li>
              </ul>
           </div>

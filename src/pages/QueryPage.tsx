@@ -38,6 +38,24 @@ export default function QueryPage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [filePreview, setFilePreview] = useState<string | null>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setSelectedFile(file);
+      if (file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setFilePreview(reader.result as string);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        setFilePreview(null);
+      }
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -280,7 +298,7 @@ export default function QueryPage() {
                     </div>
 
                     {/* Vehicle Type */}
-                    <div className="space-y-3 md:col-span-2">
+                    <div className="space-y-3">
                       <Label htmlFor="vehicle" className="text-sm font-bold text-zinc-700 flex items-center gap-2">
                         <Car size={16} className="text-emerald-500" /> Vehicle Type
                       </Label>
@@ -295,6 +313,41 @@ export default function QueryPage() {
                           <SelectItem value="bus">Luxury Bus</SelectItem>
                         </SelectContent>
                       </Select>
+                    </div>
+
+                    {/* Photo Upload */}
+                    <div className="space-y-3">
+                      <Label htmlFor="photo" className="text-sm font-bold text-zinc-700 flex items-center gap-2">
+                        <Send size={16} className="text-emerald-500" /> Attachment (ID/Itinerary)
+                      </Label>
+                      <div className="relative group/file">
+                        <Input 
+                          id="photo" 
+                          name="photo"
+                          type="file" 
+                          accept="image/*,.pdf"
+                          onChange={handleFileChange}
+                          className="rounded-xl border-zinc-200 focus:border-emerald-500 h-12 pt-2 opacity-0 absolute inset-0 z-10 cursor-pointer"
+                        />
+                        <div className="absolute inset-0 bg-white border border-dashed border-zinc-300 rounded-xl flex items-center px-4 text-sm text-zinc-500 group-hover/file:border-emerald-500 group-focus-within/file:border-emerald-500 transition-colors">
+                          <span className="truncate">{selectedFile ? selectedFile.name : "Click to upload or drag photo/doc"}</span>
+                        </div>
+                      </div>
+                      {filePreview && (
+                        <div className="mt-4 relative w-32 h-32 rounded-xl overflow-hidden border border-zinc-200 shadow-sm">
+                          <img src={filePreview} alt="Preview" className="w-full h-full object-cover" />
+                          <button 
+                            type="button"
+                            onClick={() => {
+                              setSelectedFile(null);
+                              setFilePreview(null);
+                            }}
+                            className="absolute top-1 right-1 bg-black/60 text-white rounded-full p-1 hover:bg-black/80"
+                          >
+                            <X size={12} />
+                          </button>
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -326,6 +379,7 @@ export default function QueryPage() {
             <Link to="/cabs" className="hover:text-emerald-600 transition-colors">Cabs</Link>
             <Link to="/destinations" className="hover:text-emerald-600 transition-colors">Destinations</Link>
             <Link to="/query" className="hover:text-emerald-600 transition-colors">Enquiry</Link>
+            <a href={`https://${CONTACT_INFO.website}`} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">Official Website</a>
           </div>
 
           <p className="text-zinc-400 text-sm">
