@@ -450,8 +450,9 @@ export const REVIEWS = [
 
 export const CONTACT_INFO = {
   phones: ["9383168900", "7004483286", "7665636162"],
-  email: "nyravtoursandtravels@gmail.com",
-  website: "nyravtoursandtravels.in",
+  emails: ["nyravtoursandtravels@gmail.com", "shivamthapa5478@gmail.com"],
+  website: "https://nyravtoursandtravels.in",
+  hPanel: "https://nyrav-tours-and-travels-builder-bvk489fmv9rylg4i.hostingersite.com/",
   address: "P.B Road, Suhagpur, Rehabari, Guwahati, Assam Pin Code: 781008",
   whatsapp: "https://wa.me/919383168900",
   googleMaps: "https://www.google.com/maps/place/NYRAV+TOURS+AND+TRAVELS/@26.175,91.7447,17z",

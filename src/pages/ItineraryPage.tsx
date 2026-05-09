@@ -364,14 +364,20 @@ export default function ItineraryPage() {
                   <Phone className="w-5 h-5 text-emerald-500 shrink-0" />
                   <span>{CONTACT_INFO.phones.join(" / ")}</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-emerald-500 shrink-0" />
-                  <span>{CONTACT_INFO.email}</span>
+                <li className="flex items-start gap-3">
+                  <Mail className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                  <div className="flex flex-col">
+                    {CONTACT_INFO.emails.map((email, idx) => (
+                      <a key={idx} href={`mailto:${email}`} className="hover:text-emerald-500 transition-colors">
+                        {email}
+                      </a>
+                    ))}
+                  </div>
                 </li>
                 <li className="flex items-center gap-3">
                   <Globe className="w-5 h-5 text-emerald-500 shrink-0" />
-                  <a href={`https://${CONTACT_INFO.website}`} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500 transition-colors">
-                    {CONTACT_INFO.website}
+                  <a href={CONTACT_INFO.website} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500 transition-colors">
+                    {CONTACT_INFO.website.replace('https://', '')}
                   </a>
                 </li>
               </ul>
@@ -383,6 +389,7 @@ export default function ItineraryPage() {
             <div className="flex gap-8">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              <a href={CONTACT_INFO.hPanel} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors opacity-20 hover:opacity-100 text-[10px] uppercase font-bold self-center">hPanel Login</a>
             </div>
           </div>
         </div>

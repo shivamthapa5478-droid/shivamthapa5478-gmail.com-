@@ -153,9 +153,9 @@ export default function HomePage() {
             <Link to="/destinations" className="hover:text-emerald-500 transition-colors">Destinations</Link>
             <Link to="/itinerary" className="hover:text-emerald-500 transition-colors text-emerald-500 font-bold border-b-2 border-emerald-500">Itinerary</Link>
             <Link to="/query" className="hover:text-emerald-500 transition-colors">Enquiry</Link>
-            <a href={`https://${CONTACT_INFO.website}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-emerald-500 transition-colors group">
+            <a href={CONTACT_INFO.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-emerald-500 transition-colors group">
               <Globe size={16} className="text-emerald-500 group-hover:animate-pulse" />
-              <span className="hidden lg:inline">{CONTACT_INFO.website}</span>
+              <span className="hidden lg:inline">{CONTACT_INFO.website.replace('https://', '')}</span>
             </a>
             <a href="#services" className="hover:text-emerald-500 transition-colors">Services</a>
             <a href="#packages" className="hover:text-emerald-500 transition-colors">Packages</a>
@@ -194,7 +194,7 @@ export default function HomePage() {
             <Link to="/cabs" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-zinc-900">Cabs</Link>
             <Link to="/destinations" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-zinc-900">Destinations</Link>
             <Link to="/query" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-zinc-900">Enquiry</Link>
-            <a href={`https://${CONTACT_INFO.website}`} target="_blank" rel="noopener noreferrer" className="text-lg font-medium text-emerald-600 flex items-center gap-2">
+            <a href={CONTACT_INFO.website} target="_blank" rel="noopener noreferrer" className="text-lg font-medium text-emerald-600 flex items-center gap-2">
               <Globe size={20} />
               <span>Official Website</span>
             </a>
@@ -253,7 +253,7 @@ export default function HomePage() {
                   Plan Your Trip <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <a href={`https://${CONTACT_INFO.website}`} target="_blank" rel="noopener noreferrer">
+              <a href={CONTACT_INFO.website} target="_blank" rel="noopener noreferrer">
                 <Button size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-white/30 rounded-full px-8 py-6 text-lg backdrop-blur-sm flex items-center gap-2">
                   <Globe size={20} className="text-emerald-500" />
                   Visit Website
@@ -887,12 +887,15 @@ export default function HomePage() {
                 </div>
                 <div>
                   <div className="text-zinc-400 text-sm mb-1">Email Us</div>
-                  <a 
-                    href={`mailto:${CONTACT_INFO.email}`}
-                    className="text-white text-xl font-medium hover:text-emerald-400 transition-colors"
-                  >
-                    {CONTACT_INFO.email}
-                  </a>
+                  {CONTACT_INFO.emails.map((email, idx) => (
+                    <a 
+                      key={idx} 
+                      href={`mailto:${email}`}
+                      className="block text-white text-xl font-medium hover:text-emerald-400 transition-colors"
+                    >
+                      {email}
+                    </a>
+                  ))}
                 </div>
               </div>
               <div className="flex items-start gap-6">
@@ -902,12 +905,12 @@ export default function HomePage() {
                 <div>
                   <div className="text-zinc-400 text-sm mb-1">Official Website</div>
                   <a 
-                    href={`https://${CONTACT_INFO.website}`}
+                    href={CONTACT_INFO.website}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white text-xl font-medium hover:text-emerald-400 transition-colors"
                   >
-                    {CONTACT_INFO.website}
+                    {CONTACT_INFO.website.replace('https://', '')}
                   </a>
                 </div>
               </div>
@@ -1053,6 +1056,16 @@ export default function HomePage() {
                <li><Link to="/destinations" className="hover:text-emerald-600 transition-colors">Destinations</Link></li>
                <li><Link to="/query" className="hover:text-emerald-600 transition-colors">Request a Quote</Link></li>
                <li><a href="#packages" className="hover:text-emerald-600 transition-colors">Tour Packages</a></li>
+               <li>
+                 <a 
+                   href={CONTACT_INFO.hPanel} 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   className="hover:text-emerald-600 transition-colors text-[10px] uppercase font-bold opacity-30 hover:opacity-100 flex items-center gap-1 mt-4"
+                 >
+                   hPanel Login
+                 </a>
+               </li>
              </ul>
           </div>
 
@@ -1067,14 +1080,20 @@ export default function HomePage() {
                   <Phone size={16} className="text-emerald-500 shrink-0" />
                   <span>{CONTACT_INFO.phones[0]}</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <Mail size={16} className="text-emerald-500 shrink-0" />
-                  <span>{CONTACT_INFO.email}</span>
+                <li className="flex items-start gap-3">
+                  <Mail size={16} className="text-emerald-500 shrink-0 mt-1" />
+                  <div className="flex flex-col">
+                    {CONTACT_INFO.emails.map((email, idx) => (
+                      <a key={idx} href={`mailto:${email}`} className="hover:text-emerald-600 transition-colors">
+                        {email}
+                      </a>
+                    ))}
+                  </div>
                 </li>
                 <li className="flex items-center gap-3">
                   <Globe size={16} className="text-emerald-500 shrink-0" />
-                  <a href={`https://${CONTACT_INFO.website}`} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">
-                    {CONTACT_INFO.website}
+                  <a href={CONTACT_INFO.website} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors">
+                    {CONTACT_INFO.website.replace('https://', '')}
                   </a>
                 </li>
              </ul>

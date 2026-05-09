@@ -235,7 +235,8 @@ export default function DestinationsPage() {
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <Link to="/cabs" className="hover:text-white transition-colors">Cabs</Link>
             <Link to="/query" className="hover:text-white transition-colors">Enquiry</Link>
-            <a href={`https://${CONTACT_INFO.website}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline decoration-emerald-500/50 underline-offset-4">{CONTACT_INFO.website}</a>
+            <a href={CONTACT_INFO.website} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline decoration-emerald-500/50 underline-offset-4">{CONTACT_INFO.website.replace('https://', '')}</a>
+            <a href={CONTACT_INFO.hPanel} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors opacity-30 hover:opacity-100 text-[10px] uppercase font-bold self-center">hPanel Login</a>
           </div>
           <p className="text-zinc-500 text-sm">© 2026 NYRAV TOURS AND TRAVELS. All rights reserved.</p>
         </div>
