@@ -24,6 +24,7 @@ import {
   Twitter,
   Youtube,
   ExternalLink,
+  ChevronDown,
   Globe,
   Play,
   Star,
@@ -152,6 +153,10 @@ export default function HomePage() {
             <Link to="/destinations" className="hover:text-emerald-500 transition-colors">Destinations</Link>
             <Link to="/itinerary" className="hover:text-emerald-500 transition-colors text-emerald-500 font-bold border-b-2 border-emerald-500">Itinerary</Link>
             <Link to="/query" className="hover:text-emerald-500 transition-colors">Enquiry</Link>
+            <a href={`https://${CONTACT_INFO.website}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-emerald-500 transition-colors group">
+              <Globe size={16} className="text-emerald-500 group-hover:animate-pulse" />
+              <span className="hidden lg:inline">{CONTACT_INFO.website}</span>
+            </a>
             <a href="#services" className="hover:text-emerald-500 transition-colors">Services</a>
             <a href="#packages" className="hover:text-emerald-500 transition-colors">Packages</a>
             <a href="#gallery" className="hover:text-emerald-500 transition-colors">Gallery</a>
@@ -189,6 +194,10 @@ export default function HomePage() {
             <Link to="/cabs" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-zinc-900">Cabs</Link>
             <Link to="/destinations" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-zinc-900">Destinations</Link>
             <Link to="/query" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-zinc-900">Enquiry</Link>
+            <a href={`https://${CONTACT_INFO.website}`} target="_blank" rel="noopener noreferrer" className="text-lg font-medium text-emerald-600 flex items-center gap-2">
+              <Globe size={20} />
+              <span>Official Website</span>
+            </a>
             <a href="#services" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-zinc-900">Services</a>
             <a href="#packages" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-zinc-900">Packages</a>
             <a href="#gallery" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-zinc-900">Gallery</a>
@@ -240,13 +249,14 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/query">
-                <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full px-8 py-6 text-lg group">
+                <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full px-8 py-6 text-lg group shadow-lg shadow-emerald-600/20">
                   Plan Your Trip <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <a href="#packages">
-                <Button size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-white/30 rounded-full px-8 py-6 text-lg backdrop-blur-sm">
-                  View Packages
+              <a href={`https://${CONTACT_INFO.website}`} target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-white/30 rounded-full px-8 py-6 text-lg backdrop-blur-sm flex items-center gap-2">
+                  <Globe size={20} className="text-emerald-500" />
+                  Visit Website
                 </Button>
               </a>
             </div>
@@ -257,11 +267,18 @@ export default function HomePage() {
         <motion.div 
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 flex flex-col items-center gap-2 cursor-pointer"
+          onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
         >
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
-            <div className="w-1 h-2 bg-white/50 rounded-full" />
+          <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/30 mb-1">Scroll</span>
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1 relative">
+            <motion.div 
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-1 h-2 bg-emerald-500 rounded-full" 
+            />
           </div>
+          <ChevronDown size={14} className="text-emerald-500/50 mt-1" />
         </motion.div>
       </section>
 
