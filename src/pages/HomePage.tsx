@@ -395,6 +395,70 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Guwahati Specific Taxi Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <Badge className="bg-emerald-100 text-emerald-600 border-none mb-4 px-4 py-1">Local & Airport Service</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Guwahati City Taxi Services</h2>
+            <p className="text-zinc-500 max-w-2xl mx-auto">Providing round-the-clock transportation within Guwahati city and for all your outstation needs.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Guwahati Airport Transfer",
+                desc: "Fixed rate taxi service from Guwahati Airport to City, Shillong, or Kaziranga. 24/7 pickup and drop.",
+                features: ["On-time Pickup", "Uniformed Drivers", "Luggage Support"],
+                price: "From ₹600"
+              },
+              {
+                title: "Local Sightseeing Taxi",
+                desc: "Explore Kamakhya Temple, Brahmaputra Cruise, and local museums with our specialized sightseeing cabs.",
+                features: ["Daily Rental", "Expert Local Guide", "AC Comfort"],
+                price: "From ₹2,000"
+              },
+              {
+                title: "Outstation Cab Booking",
+                desc: "Reliable one-way or round-trip taxis from Guwahati to Shillong, Cherrapunji, Tawang, or Kaziranga.",
+                features: ["Wide Vehicle Choice", "Interstate Permits", "Safety First"],
+                price: "From ₹2,500"
+              }
+            ].map((service, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-zinc-50 p-8 rounded-[2rem] border border-zinc-100 hover:border-emerald-200 transition-all group"
+              >
+                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-emerald-600 mb-6 shadow-sm group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                  <Car size={28} />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                <p className="text-zinc-500 text-sm mb-6 leading-relaxed">{service.desc}</p>
+                <div className="space-y-3 mb-8">
+                  {service.features.map((f, j) => (
+                    <div key={j} className="flex items-center gap-2 text-xs font-bold text-zinc-400 uppercase tracking-wider">
+                      <CheckCircle2 size={14} className="text-emerald-500" /> {f}
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between pt-6 border-t border-zinc-200/60">
+                  <span className="text-2xl font-bold text-emerald-600">{service.price}</span>
+                  <Link to="/query">
+                    <Button variant="ghost" className="text-emerald-600 hover:text-emerald-700 p-0 font-bold group/btn">
+                      Book Taxi <ChevronRight size={18} className="translate-x-0 group-hover/btn:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Tour Packages Section */}
       {PACKAGES.length > 0 && (
         <section id="packages" className="py-24 px-6 max-w-7xl mx-auto bg-zinc-50 rounded-3xl my-12">
@@ -659,7 +723,7 @@ export default function HomePage() {
               Your Journey, <br /> Our Responsibility
             </h2>
             <p className="text-zinc-600 text-lg mb-8 leading-relaxed">
-              NYRAV TOUR AND TRAVELS is a trusted travel agency dedicated to delivering seamless travel experiences. With a passion for exploration and customer satisfaction, we specialize in organizing domestic and international tours.
+              NYRAV TOURS AND TRAVELS is Guwahati's premier taxi service and tour provider, dedicated to delivering safe and seamless travel experiences. From reliable airport transfers to curated Northeast India tours, we specialize in making every journey memorable.
             </p>
             <p className="text-zinc-600 text-lg mb-10 leading-relaxed">
               We believe travel is not just about reaching a destination — it's about experiencing the journey. We ensure comfort, safety, and memorable moments for every traveler.

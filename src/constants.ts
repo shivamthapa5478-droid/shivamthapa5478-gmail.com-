@@ -466,7 +466,7 @@ export const CAB_SERVICES = [
     models: "Alto 800, Celerio, WagonR",
     capacity: "3+1 / 4+1 Seater",
     price: "₹2,500",
-    description: "Compact and budget-friendly. Ideal for city transfers and short mountain trips.",
+    description: "Compact and budget-friendly taxi for Guwahati city transfers and short mountain trips.",
     image: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&q=80&w=2070",
     features: ["Non-AC Option", "Budget Friendly", "Professional Driver", "Clean & Sanitized"]
   },
@@ -475,7 +475,7 @@ export const CAB_SERVICES = [
     models: "Swift Dzire, Toyota Etios, Hyundai Xcent",
     capacity: "4+1 Seater",
     price: "₹3,400",
-    description: "Perfect for small families or business trips. Comfortable and economical.",
+    description: "Professional Guwahati taxi for small families or business trips. Comfortable and economical.",
     image: "https://images.unsplash.com/photo-1549444030-90600494488b?auto=format&fit=crop&q=80&w=2070",
     features: ["Air Conditioned", "Professional Driver", "Clean Interiors", "Ample Boot Space"]
   },
@@ -484,7 +484,7 @@ export const CAB_SERVICES = [
     models: "Innova Crysta, Marazzo, Ertiga",
     capacity: "6+1 / 7+1 Seater",
     price: "₹4,300",
-    description: "Ideal for larger groups or long-distance travel with extra comfort and space.",
+    description: "Ideal for larger groups or long-distance travel from Guwahati with extra comfort and space.",
     image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=2070",
     features: ["Spacious Seating", "Premium Comfort", "Carrier for Luggage", "Superior Safety"]
   },
@@ -493,7 +493,7 @@ export const CAB_SERVICES = [
     models: "Force Traveller",
     capacity: "12 / 17 / 26 Seater",
     price: "On Request",
-    description: "Best for large groups, school trips, or corporate outings.",
+    description: "Best for large groups, school trips, or corporate tours starting from Guwahati.",
     image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=2070",
     features: ["Pushback Seats", "Music System", "Large Luggage Space", "Perfect for Groups"]
   }
